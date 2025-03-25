@@ -13,6 +13,7 @@ void ShiftRight(int arr[], const int n, int shift);//функция смещения массива вп
 
 
 void main() {
+
 	setlocale(LC_ALL, "");
 	const int n = 5;
 	int arr[n];
