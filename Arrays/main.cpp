@@ -1,11 +1,17 @@
 ﻿#include<iostream>
 using namespace std;
+#define delimetr "\n------------------------------\n"
+
+const int ROWS = 4;
+const int COLS = 5;
 
 void FillRand(int arr[], const int n);// функция заполняет массив случайными числами
 void FillRand(double arr[], const int n);// функция заполняет массив случайными числами
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Print(int arr[], const int n); //функция вывода на экран
 void Print(double arr[], const int n); //функция вывода на экран
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
 void Sort(int arr[], const int n); //функция сортировки массива
 void Sort(double arr[], const int n); //функция сортировки массива
@@ -78,6 +84,27 @@ void main() {
 	cout << "Смещение элементов массива вправо: " << endl;
 	ShiftRight(brr, SIZE, step_2);
 	Print(brr, SIZE);
+	cout << delimetr;
+	// Объявление двумерного массива
+	
+	int i_arr_2[ROWS][COLS] =
+	{
+		{3,5,8},
+		{13,21,34},
+		{15,6,18},
+		{3,5,8},
+	};
+	FillRand(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+	/*for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++) {
+			cout << i_arr_2[i][j]<<"\t";
+		}cout << endl;
+	}*/
+	
+
+
 }
 
 void FillRand(int arr[], const int n)
@@ -93,6 +120,14 @@ void FillRand(double arr[], const int n)
 		arr[i] /= 100;
 	}
 }
+void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++) {
+		for (int j = 0; j < COLS; j++) {
+			arr[i][j] = rand();
+		}
+	}
+}
 
 void Print(int arr[], const int n)
 {
@@ -105,6 +140,16 @@ void Print(double arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
 		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++) {
+			cout << arr[i][j] << "\t";
+		}cout << endl;
 	}
 	cout << endl;
 }
