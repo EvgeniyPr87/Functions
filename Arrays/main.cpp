@@ -1,15 +1,15 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 
-void FillRand(int arr[], const int n);// функция заполняет массив случайными числами
-void Print(int arr[], const int n); //функция вывода на экран
-void Sort(int arr[], const int n); //функция сортировки массива
-int SumNumbers(int arr[], const int n);//функция вычисления суммы элементов массива
-double AvgNumbers(int arr[], const int n, int Sum);// функция вычисления средн.арифметич. элементов
-int MaxNumbers(int arr[], const int n);// функция нахождения max из элементов
-int MinNumbers(int arr[], const int n);// функция нахождения min из элементов
-void ShiftLeft(int arr[], const int n, int shift);//функция смещения массива влево
-void ShiftRight(int arr[], const int n, int shift);//функция смещения массива вправо
+void FillRand(int arr[], const int n);// С„СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅСЏРµС‚ РјР°СЃСЃРёРІ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
+void Print(int arr[], const int n); //С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РЅР° СЌРєСЂР°РЅ
+void Sort(int arr[], const int n); //С„СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РјР°СЃСЃРёРІР°
+int SumNumbers(int arr[], const int n);//С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
+double AvgNumbers(int arr[], const int n, int Sum);// С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСЂРµРґРЅ.Р°СЂРёС„РјРµС‚РёС‡. СЌР»РµРјРµРЅС‚РѕРІ
+int MaxNumbers(int arr[], const int n);// С„СѓРЅРєС†РёСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ max РёР· СЌР»РµРјРµРЅС‚РѕРІ
+int MinNumbers(int arr[], const int n);// С„СѓРЅРєС†РёСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ min РёР· СЌР»РµРјРµРЅС‚РѕРІ
+void ShiftLeft(int arr[], const int n, int shift);//С„СѓРЅРєС†РёСЏ СЃРјРµС‰РµРЅРёСЏ РјР°СЃСЃРёРІР° РІР»РµРІРѕ
+void ShiftRight(int arr[], const int n, int shift);//С„СѓРЅРєС†РёСЏ СЃРјРµС‰РµРЅРёСЏ РјР°СЃСЃРёРІР° РІРїСЂР°РІРѕ
 
 
 void main() {
@@ -23,18 +23,18 @@ void main() {
 	Print(arr, n);
 	Sort(arr, n);
 
-	cout << "Отсортированный массив: " << endl;
+	cout << "РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ: " << endl;
 	Print(arr, n);
-	cout << "Сумма элементов массива: " << SumNumbers(arr, n) << endl;
-	cout << "Средняя арифметическа элементов: " << AvgNumbers(arr, n, SumNumbers(arr, n)) << endl;
-	cout << "Максимальный элемент массива: " << MaxNumbers(arr, n) << endl;
-	cout << "Минимальный элемент массива: " << MinNumbers(arr, n) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << SumNumbers(arr, n) << endl;
+	cout << "РЎСЂРµРґРЅСЏСЏ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєР° СЌР»РµРјРµРЅС‚РѕРІ: " << AvgNumbers(arr, n, SumNumbers(arr, n)) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°: " << MaxNumbers(arr, n) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°: " << MinNumbers(arr, n) << endl;
 
-	cout << "Смещение элементов массива влево: " << endl;
+	cout << "РЎРјРµС‰РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° РІР»РµРІРѕ: " << endl;
 	ShiftLeft(arr, n, step_1);
 	Print(arr, n);
 
-	cout << "Смещение элементов массива вправо: " << endl;
+	cout << "РЎРјРµС‰РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° РІРїСЂР°РІРѕ: " << endl;
 	ShiftRight(arr, n, step_1);
 	Print(arr, n);
 	cout << endl << endl;;
@@ -46,19 +46,19 @@ void main() {
 	FillRand(brr, SIZE);
 	Print(brr, SIZE);
 	Sort(brr, SIZE);
-	cout << "Отсортированный массив: " << endl;
+	cout << "РћС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Р№ РјР°СЃСЃРёРІ: " << endl;
 	Print(brr, SIZE);
 	
-	cout << "Сумма элементов массива: " << SumNumbers(brr, SIZE) << endl;
-	cout << "Средняя арифметическа элементов: " << AvgNumbers(brr, SIZE, SumNumbers(brr, SIZE)) << endl;
-	cout << "Максимальный элемент массива: " << MaxNumbers(brr, SIZE) << endl;
-	cout << "Минимальный элемент массива: " << MinNumbers(brr, SIZE) << endl;
+	cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << SumNumbers(brr, SIZE) << endl;
+	cout << "РЎСЂРµРґРЅСЏСЏ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєР° СЌР»РµРјРµРЅС‚РѕРІ: " << AvgNumbers(brr, SIZE, SumNumbers(brr, SIZE)) << endl;
+	cout << "РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°: " << MaxNumbers(brr, SIZE) << endl;
+	cout << "РњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°: " << MinNumbers(brr, SIZE) << endl;
 
-	cout << "Смещение элементов массива влево: " << endl;
+	cout << "РЎРјРµС‰РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° РІР»РµРІРѕ: " << endl;
 	ShiftLeft(brr, SIZE, step_2);
 	Print(brr, SIZE);
 
-	cout << "Смещение элементов массива вправо: " << endl;
+	cout << "РЎРјРµС‰РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР° РІРїСЂР°РІРѕ: " << endl;
 	ShiftRight(brr, SIZE, step_2);
 	Print(brr, SIZE);
 }
