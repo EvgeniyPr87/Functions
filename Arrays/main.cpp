@@ -2,14 +2,31 @@
 using namespace std;
 
 void FillRand(int arr[], const int n);// функция заполняет массив случайными числами
+void FillRand(double arr[], const int n);// функция заполняет массив случайными числами
+
 void Print(int arr[], const int n); //функция вывода на экран
+void Print(double arr[], const int n); //функция вывода на экран
+
 void Sort(int arr[], const int n); //функция сортировки массива
+void Sort(double arr[], const int n); //функция сортировки массива
+
 int SumNumbers(int arr[], const int n);//функция вычисления суммы элементов массива
+double SumNumbers(double arr[], const int n);//функция вычисления суммы элементов массива
+
 double AvgNumbers(int arr[], const int n, int Sum);// функция вычисления средн.арифметич. элементов
+double AvgNumbers(double arr[], const int n, int Sum);// функция вычисления средн.арифметич. элементов
+
 int MaxNumbers(int arr[], const int n);// функция нахождения max из элементов
+double MaxNumbers(double arr[], const int n);// функция нахождения max из элементов
+
 int MinNumbers(int arr[], const int n);// функция нахождения min из элементов
+double MinNumbers(double arr[], const int n);// функция нахождения min из элементов
+
 void ShiftLeft(int arr[], const int n, int shift);//функция смещения массива влево
+void ShiftLeft(double arr[], const int n, int shift);//функция смещения массива влево
+
 void ShiftRight(int arr[], const int n, int shift);//функция смещения массива вправо
+void ShiftRight(double arr[], const int n, int shift);//функция смещения массива вправо
 
 
 void main() {
@@ -40,7 +57,7 @@ void main() {
 	cout << endl << endl;;
 
 	const int SIZE = 8;
-	int brr[SIZE];
+	double brr[SIZE];
 	int step_2 = 1;
 
 	FillRand(brr, SIZE);
@@ -69,6 +86,14 @@ void FillRand(int arr[], const int n)
 		arr[i] = rand() % 100;
 	}
 }
+void FillRand(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++) {
+		arr[i] = rand() % 10000;
+		arr[i] /= 100;
+	}
+}
+
 void Print(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -76,6 +101,14 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
+void Print(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
 void Sort(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -88,6 +121,19 @@ void Sort(int arr[], const int n)
 		}
 	}
 }
+void Sort(double arr[], const int n)
+{
+	for (int i = 0; i < n; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (arr[j] < arr[i]) {
+				double bufer = arr[i];
+				arr[i] = arr[j];
+				arr[j] = bufer;
+			}
+		}
+	}
+}
+
 int SumNumbers(int arr[], const int n)
 {
 	int sum = 0;
@@ -96,10 +142,24 @@ int SumNumbers(int arr[], const int n)
 	}
 	return sum;
 }
+double SumNumbers(double arr[], const int n)
+{
+	double sum = 0;
+	for (int i = 0; i < n; i++) {
+		sum += arr[i];
+	}
+	return sum;
+}
+
 double AvgNumbers(int arr[], const int n, int Sum)
 {
 	return  (double)Sum/n;
 }
+double AvgNumbers(double arr[], const int n, int Sum)
+{
+	return  (double)Sum / n;
+}
+
 int MaxNumbers(int arr[], const int n)
 { 
 	int max_number = INT_MIN;
@@ -110,6 +170,17 @@ int MaxNumbers(int arr[], const int n)
 	}
 	return max_number;
 }
+double MaxNumbers(double arr[], const int n)
+{
+	double max_number = arr[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] > max_number)  max_number = arr[i];
+
+	}
+	return max_number;
+}
+
 int MinNumbers(int arr[], const int n)
 {
 	
@@ -120,6 +191,17 @@ int MinNumbers(int arr[], const int n)
 	}
 	return min_number;
 }
+double MinNumbers(double arr[], const int n)
+{
+
+	double min_number = INT_MAX;
+	for (int i = 0; i < n; i++)
+	{
+		if (arr[i] < min_number) min_number = arr[i];
+	}
+	return min_number;
+}
+
 void ShiftLeft(int arr[], const int n, int shift)
 {
 	if (shift < 0) shift += n;
@@ -131,16 +213,40 @@ void ShiftLeft(int arr[], const int n, int shift)
 		arr[n - 1] = temp;
 	}
 }
+void ShiftLeft(double arr[], const int n, int shift)
+{
+	if (shift < 0) shift += n;
+	for (int i = 0; i < shift; i++) {
+		int temp = arr[0];
+		for (int j = 0; j < n - 1; j++) {
+			arr[j] = arr[j + 1];
+		}
+		arr[n - 1] = temp;
+	}
+}
+
 void ShiftRight(int arr[], const int n, int shift)
 {
 	if (shift < 0) shift += n;
 	for (int i = 0; i < shift; i++) {
-		int temp = arr[n-1];
+		double temp = arr[n-1];
 		for (int j = n - 1; j > 0; j--) {
 			arr[j] = arr[j - 1];
 		}
 		arr[0] = temp;
 }
 }
+void ShiftRight(double arr[], const int n, int shift)
+{
+	if (shift < 0) shift += n;
+	for (int i = 0; i < shift; i++) {
+		double temp = arr[n - 1];
+		for (int j = n - 1; j > 0; j--) {
+			arr[j] = arr[j - 1];
+		}
+		arr[0] = temp;
+	}
+}
+
 
 
