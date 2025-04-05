@@ -1,4 +1,4 @@
-#include "Statistics.h"
+﻿#include "Statistics.h"
 #include "constants .h"
 
 int SumNumbers(int arr[], const int n)

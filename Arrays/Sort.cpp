@@ -1,4 +1,4 @@
-#include "Sort.h"
+ï»¿#include "Sort.h"
 #include "constants .h"
 
 void Sort(int arr[], const int n)
@@ -45,6 +45,6 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 			}
 		}
 	}
-	//cout << "Êîëè÷åñòâî èòåðàöèé" << " " << iteration << endl;
-	//cout << "Êîëè÷åñòâî îáìåíîâ" << " " << exchanges << endl;
+	//cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ñ‚ÐµÑ€Ð°Ñ†Ð¸Ð¹" << " " << iteration << endl;
+	//cout << "ÐšÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¾Ð±Ð¼ÐµÐ½Ð¾Ð²" << " " << exchanges << endl;
 }

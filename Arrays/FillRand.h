@@ -1,7 +1,7 @@
-#pragma once
+п»ї#pragma once
 #include "constants .h"
 
-// функция заполняет массив случайными числами
+// С„СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅСЏРµС‚ РјР°СЃСЃРёРІ СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
 void FillRand(int arr[], const int n);
 void FillRand(double arr[], const int n);
 void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);

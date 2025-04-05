@@ -1,8 +1,8 @@
-#pragma once
+п»ї#pragma once
 #include "stdafx.h"
 #include "constants .h"
 
-//функция вывода на экран
+//С„СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РЅР° СЌРєСЂР°РЅ
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);
 void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);

@@ -1,25 +1,25 @@
-#pragma once
+п»ї#pragma once
 #include "constants .h"
 
-//функция вычисления суммы элементов массива
+//С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 int SumNumbers(int arr[], const int n);
 double SumNumbers(double arr[], const int n);
 int SumNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double SumNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-// функция вычисления средн.арифметич. элементов
+// С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСЂРµРґРЅ.Р°СЂРёС„РјРµС‚РёС‡. СЌР»РµРјРµРЅС‚РѕРІ
 double AvgNumbers(int arr[], const int n, int Sum);
 double AvgNumbers(double arr[], const int n, int Sum);
 double AvgNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS, int Sum);
 double AvgNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS, double Sum);
 
-// функция нахождения max из элементов
+// С„СѓРЅРєС†РёСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ max РёР· СЌР»РµРјРµРЅС‚РѕРІ
 int MaxNumbers(int arr[], const int n);
 double MaxNumbers(double arr[], const int n);
 int MaxNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS);
 double MaxNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
-// функция нахождения min из элементов
+// С„СѓРЅРєС†РёСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ min РёР· СЌР»РµРјРµРЅС‚РѕРІ
 int MinNumbers(int arr[], const int n);
 double MinNumbers(double arr[], const int n);
 int MinNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS);

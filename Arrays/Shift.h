@@ -1,14 +1,14 @@
-#pragma once
+п»ї#pragma once
 #include "constants .h"
 
-//функция смещения массива влево
+//С„СѓРЅРєС†РёСЏ СЃРјРµС‰РµРЅРёСЏ РјР°СЃСЃРёРІР° РІР»РµРІРѕ
 void ShiftLeft(int arr[], const int n, int shift);
 void ShiftLeft(double arr[], const int n, int shift);
 void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 //void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 //void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
-//функция смещения массива вправо
+//С„СѓРЅРєС†РёСЏ СЃРјРµС‰РµРЅРёСЏ РјР°СЃСЃРёРІР° РІРїСЂР°РІРѕ
 void ShiftRight(int arr[], const int n, int shift);
 void ShiftRight(double arr[], const int n, int shift);
 //void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
