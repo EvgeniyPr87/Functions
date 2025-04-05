@@ -27,6 +27,8 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 //функция сортировки массива
 void Sort(int arr[], const int n); 
 void Sort(double arr[], const int n); 
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 //функция вычисления суммы элементов массива
 int SumNumbers(int arr[], const int n);
@@ -55,11 +57,15 @@ double MinNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS);
 //функция смещения массива влево
 void ShiftLeft(int arr[], const int n, int shift);
 void ShiftLeft(double arr[], const int n, int shift);
+void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
+//void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
+//void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
 //функция смещения массива вправо
 void ShiftRight(int arr[], const int n, int shift);
 void ShiftRight(double arr[], const int n, int shift);
-
+//void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
+//void ShiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 void main() {
 
 	setlocale(LC_ALL, "");
@@ -124,6 +130,21 @@ void main() {
 	Print(i_arr_2, ROWS, COLS);
 
 	cout << delimetr;
+	cout << "Сортировка" << endl;
+
+	Sort(i_arr_2, ROWS, COLS);
+	Print(i_arr_2, ROWS, COLS);
+
+	cout << delimetr;
+	int d=0;
+	
+	ShiftLeft(i_arr_2, ROWS, COLS,d);
+	cout << "Смещение элементов влево построчно:" << endl;
+	cout << d << endl;
+	cin >> d;
+	Print(i_arr_2, ROWS, COLS);
+
+
 	cout << delimetr;
 
 	cout<< "Сумма элементов массива: " << SumNumbers(i_arr_2,ROWS,COLS) << endl;
@@ -236,6 +257,29 @@ void Sort(double arr[], const int n)
 			}
 		}
 	}
+}
+void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+{
+	int iteration = 0;
+	int exchanges = 0;
+	for (int i = 0; i < ROWS; i++) {
+		
+		for (int j = 0; j < COLS; j++) {
+			for (int k = i; k < ROWS; k++) {
+				for (int l = k >i ? 0:j + 1; l < COLS; l++) {
+					iteration++;
+					if (arr[k][l] < arr[i][j]) {
+						int buffer = arr[i][j];
+						arr[i][j] = arr[k][l];
+						arr[k][l] = buffer;
+						exchanges++;
+					}
+				}
+			}
+		}
+	}
+	cout << "Количество итераций" << " " << iteration<<endl;
+	cout << "Количество обменов" << " " <<exchanges<<endl;
 }
 
 int SumNumbers(int arr[], const int n)
@@ -386,7 +430,7 @@ double MinNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS)
 
 void ShiftLeft(int arr[], const int n, int shift)
 {
-	if (shift < 0) shift += n;
+	//if (shift < 0) shift += n;
 	for (int i = 0; i < shift; i++) {
 		int temp = arr[0];
 		for (int j = 0; j < n - 1; j++) {
@@ -406,17 +450,31 @@ void ShiftLeft(double arr[], const int n, int shift)
 		arr[n - 1] = temp;
 	}
 }
+void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
+{
+	/*for (int i = 0; i < ROWS; i++) {
+		ShiftLeft(arr[i], COLS, shift);
+}*/
+
+	ShiftLeft(arr[0], ROWS * COLS, shift);
+}
+//void ShiftLeft(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
+//{
+//
+//}
+
 
 void ShiftRight(int arr[], const int n, int shift)
 {
-	if (shift < 0) shift += n;
+	/*if (shift < 0) shift += n;
 	for (int i = 0; i < shift; i++) {
 		double temp = arr[n-1];
 		for (int j = n - 1; j > 0; j--) {
 			arr[j] = arr[j - 1];
 		}
-		arr[0] = temp;
-}
+		arr[0] = temp;*/
+	ShiftLeft(arr, n, n - shift);
+
 }
 void ShiftRight(double arr[], const int n, int shift)
 {
@@ -429,6 +487,8 @@ void ShiftRight(double arr[], const int n, int shift)
 		arr[0] = temp;
 	}
 }
+//void ShiftRight(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
+//void ShiftRight(double arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
 
 
