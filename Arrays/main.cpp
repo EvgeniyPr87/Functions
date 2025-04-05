@@ -4,8 +4,8 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-//#define MAS_1
-//#define MAS_2
+#define MAS_1
+#define MAS_2
 
 #define delimetr "\n-------------------------------------\n"
 
@@ -28,6 +28,7 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 void Sort(int arr[], const int n); 
 void Sort(double arr[], const int n); 
 void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
+void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 //функция вычисления суммы элементов массива
 int SumNumbers(int arr[], const int n);
@@ -152,6 +153,8 @@ void main() {
 	FillRand(d_arr_2, ROWS, COLS);
 	Print(d_arr_2, ROWS, COLS);
 	cout << delimetr;
+	Sort(d_arr_2, ROWS, COLS);
+	Print(d_arr_2, ROWS, COLS);
 
 
 	cout << delimetr;
@@ -249,36 +252,6 @@ void Sort(double arr[], const int n)
 				arr[i] = arr[j];
 				arr[j] = bufer;
 			}
-		}
-	}
-}
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS * COLS-1; i++) {
-		int minIndex = i;
-		for (int j = i + 1; j < ROWS * COLS; j++) {
-			int rows_i = i / COLS;
-			int cols_i = i % COLS;
-
-			int rows_j = j / COLS;
-			int cols_j = j % COLS;
-
-			int rows_min = minIndex / COLS;
-			int cols_min = minIndex % COLS;
-
-			if (arr[rows_i][cols_i] < arr[rows_min][cols_min]) {
-				minIndex = j;
-			}
-		}
-		if (minIndex != i) {
-			int rows_i = i / COLS;
-			int cols_i = i % COLS;
-			int rows_min = minIndex / COLS;
-			int cols_min = minIndex % COLS;
-
-			int bufer = arr[rows_i][cols_i];
-			arr[rows_i][cols_i] = arr[rows_min][cols_min];
-			arr[rows_min][cols_min] = bufer;
 		}
 	}
 }
@@ -449,17 +422,6 @@ void ShiftLeft(double arr[], const int n, int shift)
 			arr[j] = arr[j + 1];
 		}
 		arr[n - 1] = temp;
-	}
-}
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS,int shift)
-{
-	if (shift < 0) shift += ROWS;
-	for (int i = 0; i < shift; i++) {
-		int temp = arr[0][0];
-		for (int j = 0; j < ROWS - 1; j++) {
-			arr[i][j] = arr[i][j + 1];
-		}
-		arr[i][ROWS - 1] = temp;
 	}
 }
 
