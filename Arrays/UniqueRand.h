@@ -1,9 +1,9 @@
-#pragma once
+п»ї#pragma once
 #include "stdafx.h"
 #include "constants .h"
 
 
-//Функция заполняет массив уникальными рандомными значениями
+//Р¤СѓРЅРєС†РёСЏ Р·Р°РїРѕР»РЅСЏРµС‚ РјР°СЃСЃРёРІ СѓРЅРёРєР°Р»СЊРЅС‹РјРё СЂР°РЅРґРѕРјРЅС‹РјРё Р·РЅР°С‡РµРЅРёСЏРјРё
 
 void UniqueRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 
