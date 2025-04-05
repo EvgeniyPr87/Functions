@@ -5,13 +5,14 @@
 #include "Sort.h"
 #include "Statistics.h"
 #include "Shift.h"
+#include "UniqueRand.h"
+
 //#include "FillRand.cpp" //Реализации функции неподключаются к  месту вызова
-#define delimetr "\n-------------------------------------\n"
+
 void main() {
 
 	setlocale(LC_ALL, "");
 
-	
 	int arr[n];
 	int step_1 = 3;
 
@@ -60,10 +61,14 @@ void main() {
 	Print(brr, SIZE);
 	cout << delimetr;
 	
-	int i_arr_2[ROWS][COLS];
+	int i_arr_2[ROWS][COLS] = {};
 	
 	FillRand(i_arr_2, ROWS, COLS);
 	Print(i_arr_2, ROWS, COLS);
+	cout << " Уникальные элементы: " << endl;
+	int i_arr_2d[ROWS][COLS];
+	UniqueRand(i_arr_2d, ROWS, COLS);
+	Print(i_arr_2d, ROWS, COLS);
 
 	cout << delimetr;
 	cout << "Сортировка" << endl << endl;
@@ -81,12 +86,10 @@ void main() {
 	Print(i_arr_2, ROWS, COLS);
 
 	cout << delimetr;
-
 	cout<< "Сумма элементов массива: " << SumNumbers(i_arr_2,ROWS,COLS) << endl;
 	cout << "Средняя арифметическа элементов: " << AvgNumbers(i_arr_2, ROWS, COLS, SumNumbers(i_arr_2, ROWS, COLS)) << endl;
 	cout << "Максимальный элемент массива: " << MaxNumbers(i_arr_2, ROWS, COLS)<<  endl;
 	cout << "Минимальный элемент массива: "  << MinNumbers(i_arr_2, ROWS, COLS)<< endl;
-
 	cout << delimetr;
 	cout << delimetr;
 
