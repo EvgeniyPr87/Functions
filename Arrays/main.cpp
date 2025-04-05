@@ -27,8 +27,6 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 //функция сортировки массива
 void Sort(int arr[], const int n); 
 void Sort(double arr[], const int n); 
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
-void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 //функция вычисления суммы элементов массива
 int SumNumbers(int arr[], const int n);
@@ -57,12 +55,10 @@ double MinNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS);
 //функция смещения массива влево
 void ShiftLeft(int arr[], const int n, int shift);
 void ShiftLeft(double arr[], const int n, int shift);
-void ShiftLeft(int arr[ROWS][COLS], const int ROWS, const int COLS, int shift);
 
 //функция смещения массива вправо
 void ShiftRight(int arr[], const int n, int shift);
 void ShiftRight(double arr[], const int n, int shift);
-
 
 void main() {
 
@@ -130,20 +126,10 @@ void main() {
 	cout << delimetr;
 	cout << delimetr;
 
-	Sort(i_arr_2, ROWS, COLS);
-	Print(i_arr_2, ROWS, COLS);
-	cout << delimetr;
-
 	cout<< "Сумма элементов массива: " << SumNumbers(i_arr_2,ROWS,COLS) << endl;
 	cout << "Средняя арифметическа элементов: " << AvgNumbers(i_arr_2, ROWS, COLS, SumNumbers(i_arr_2, ROWS, COLS)) << endl;
 	cout << "Максимальный элемент массива: " << MaxNumbers(i_arr_2, ROWS, COLS)<<  endl;
 	cout << "Минимальный элемент массива: "  << MinNumbers(i_arr_2, ROWS, COLS)<< endl;
-
-	cout << delimetr;
-
-	int shift = 3;
-	ShiftLeft(i_arr_2, ROWS, COLS, shift);
-	Print(i_arr_2, ROWS, COLS);
 
 	cout << delimetr;
 	cout << delimetr;
@@ -153,9 +139,6 @@ void main() {
 	FillRand(d_arr_2, ROWS, COLS);
 	Print(d_arr_2, ROWS, COLS);
 	cout << delimetr;
-	Sort(d_arr_2, ROWS, COLS);
-	Print(d_arr_2, ROWS, COLS);
-
 
 	cout << delimetr;
 	cout << "Сумма элементов массива: " << SumNumbers(d_arr_2, ROWS, COLS) << endl;
@@ -164,7 +147,6 @@ void main() {
 	cout << "Минимальный элемент массива: " << MinNumbers(d_arr_2, ROWS, COLS) << endl;
 	cout << delimetr;
 }
-
 void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
