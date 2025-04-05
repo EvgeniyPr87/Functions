@@ -1,4 +1,7 @@
 #pragma once
+#include "stdafx.h"
+#include "constants .h"
+
 //функция вывода на экран
 void Print(int arr[], const int n);
 void Print(double arr[], const int n);

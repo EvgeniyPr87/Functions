@@ -1,4 +1,7 @@
 #include "FillRand.h"
+#include "constants .h"
+#include "stdafx.h"
+
 void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {

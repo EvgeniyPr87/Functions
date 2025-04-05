@@ -1,4 +1,7 @@
 #include"Print.h"
+#include "stdafx.h"
+#include "constants .h"
+
 void Print(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -6,6 +9,7 @@ void Print(int arr[], const int n)
 	}
 	cout << endl;
 }
+
 void Print(double arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -13,6 +17,7 @@ void Print(double arr[], const int n)
 	}
 	cout << endl;
 }
+
 void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
@@ -23,6 +28,7 @@ void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	cout << endl;
 }
+
 void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
