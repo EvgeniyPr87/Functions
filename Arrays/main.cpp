@@ -7,12 +7,12 @@
 #include "Shift.h"
 #include "UniqueRand.h"
 
-//#include "FillRand.cpp" //Реализации функции неподключаются к  месту вызова
+//#include "FillRand.cpp" //Реализации функции не подключаются к  месту вызова
 
 void main() {
 
 	setlocale(LC_ALL, "");
-
+	srand(time(NULL));
 	int arr[n];
 	int step_1 = 3;
 
@@ -37,6 +37,11 @@ void main() {
 	ShiftRight(arr, n, step_1);
 	Print(arr, n);
 	cout << endl << endl;
+
+	cout << "Уникальные элементы :" << endl;
+	int i_arr[n]{};
+	UniqueRand(i_arr, n);
+	Print(i_arr, n);
 
 	double brr[SIZE];
 	int step_2 = 1;
@@ -67,8 +72,8 @@ void main() {
 	Print(i_arr_2, ROWS, COLS);
 	cout << " Уникальные элементы: " << endl;
 	int i_arr_2d[ROWS][COLS];
-	UniqueRand(i_arr_2d, ROWS, COLS);
-	Print(i_arr_2d, ROWS, COLS);
+	//UniqueRand(i_arr_2d, ROWS, COLS);
+	//Print(i_arr_2d, ROWS, COLS);
 
 	cout << delimetr;
 	cout << "Сортировка" << endl << endl;
@@ -77,12 +82,10 @@ void main() {
 	Print(i_arr_2, ROWS, COLS);
 
 	cout << delimetr;
-	int d=0;
+	int d=5;
 	
 	ShiftLeft(i_arr_2, ROWS, COLS,d);
 	cout << "Смещение элементов влево построчно:" << endl;
-	cout << d << endl;
-	cin >> d;
 	Print(i_arr_2, ROWS, COLS);
 
 	cout << delimetr;
@@ -105,4 +108,21 @@ void main() {
 	cout << "Максимальный элемент массива: " << MaxNumbers(d_arr_2, ROWS, COLS) << endl;
 	cout << "Минимальный элемент массива: " << MinNumbers(d_arr_2, ROWS, COLS) << endl;
 	cout << delimetr;
+
+	cout << "Массив уникальных элементов" << endl;
+	int iRandomArr[SIZE_2]{};
+	Print(iRandomArr, SIZE_2);
+	
+	cout << endl;
+	cout << delimetr;
+	UniqueRand(iRandomArr, SIZE_2, 0,100);
+	Print(iRandomArr, SIZE_2);
+	
+	cout << endl;
+	cout << delimetr;
+	double dRandomArr[SIZE_2]{};
+	UniqueRand(dRandomArr, SIZE_2);
+	Print(dRandomArr, SIZE_2);
+
+
 }
