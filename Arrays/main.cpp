@@ -19,28 +19,34 @@ void FillRand(int arr[ROWS][COLS], const int ROWS, const int COLS);
 void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 //функция вывода на экран
-void Print(int arr[], const int n); 
-void Print(double arr[], const int n); 
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS);
-void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+void Print(T arr[], const int n); 
+template<typename T>
+void Print(T arr[ROWS][COLS], const int ROWS, const int COLS);
+//void Print(double arr[ROWS][COLS], const int ROWS, const int COLS);
 
 //функция сортировки массива
-void Sort(int arr[], const int n); 
-void Sort(double arr[], const int n); 
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS);
-//void Sort(double arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+void Sort(T arr[], const int n); 
+template<typename T>
+void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS);
+
 
 //функция вычисления суммы элементов массива
-int SumNumbers(int arr[], const int n);
-double SumNumbers(double arr[], const int n);
-int SumNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS);
-double SumNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS);
+template<typename T>
+int SumNumbers(T arr[], const int n);
+
+template<typename T>
+T SumNumbers(T arr[ROWS][COLS], const int ROWS, const int COLS);
+
 
 // функция вычисления средн.арифметич. элементов
-double AvgNumbers(int arr[], const int n, int Sum);
-double AvgNumbers(double arr[], const int n, int Sum);
-double AvgNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS, int Sum);
-double AvgNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS, double Sum);
+template<typename T>
+double AvgNumbers(T arr[], const int n, T Sum);
+
+template<typename T>
+//double AvgNumbers(T arr[ROWS][COLS], const int ROWS, const int COLS, T Sum);
+
 
 // функция нахождения max из элементов
 int MaxNumbers(int arr[], const int n);
@@ -109,7 +115,7 @@ void main() {
 	Print(brr, SIZE);
 
 	cout << "Сумма элементов массива: " << SumNumbers(brr, SIZE) << endl;
-	cout << "Средняя арифметическа элементов: " << AvgNumbers(brr, SIZE, SumNumbers(brr, SIZE)) << endl;
+	//cout << "Средняя арифметическа элементов: " << AvgNumbers(brr, SIZE, SumNumbers(brr, SIZE)) << endl;
 	cout << "Максимальный элемент массива: " << MaxNumbers(brr, SIZE) << endl;
 	cout << "Минимальный элемент массива: " << MinNumbers(brr, SIZE) << endl;
 
@@ -148,7 +154,7 @@ void main() {
 	cout << delimetr;
 
 	cout<< "Сумма элементов массива: " << SumNumbers(i_arr_2,ROWS,COLS) << endl;
-	cout << "Средняя арифметическа элементов: " << AvgNumbers(i_arr_2, ROWS, COLS, SumNumbers(i_arr_2, ROWS, COLS)) << endl;
+	//cout << "Средняя арифметическа элементов: " << AvgNumbers(i_arr_2, ROWS, COLS, SumNumbers(i_arr_2, ROWS, COLS)) << endl;
 	cout << "Максимальный элемент массива: " << MaxNumbers(i_arr_2, ROWS, COLS)<<  endl;
 	cout << "Минимальный элемент массива: "  << MinNumbers(i_arr_2, ROWS, COLS)<< endl;
 
@@ -198,32 +204,16 @@ void FillRand(double arr[ROWS][COLS], const int ROWS, const int COLS)
 		}
 	}
 }
-
-void Print(int arr[], const int n)
+template<typename T>
+void Print(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
 		cout << arr[i] << "\t";
 	}
 	cout << endl;
 }
-void Print(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++) {
-		cout << arr[i] << "\t";
-	}
-	cout << endl;
-}
-void Print(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++) {
-			cout << arr[i][j] << "\t";
-		}cout << endl;
-	}
-	cout << endl;
-}
-void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
+template<typename T>
+void Print(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -234,31 +224,21 @@ void Print(double arr[ROWS][COLS], const int ROWS, const int COLS)
 	cout << endl;
 }
 
-void Sort(int arr[], const int n)
+template<typename T>
+void Sort(T arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {
 		for (int j = i + 1; j < n; j++) {
 			if (arr[j] < arr[i]) {
-				int bufer = arr[i];
+				T bufer = arr[i];
 				arr[i] = arr[j];
 				arr[j] = bufer;
 			}
 		}
 	}
 }
-void Sort(double arr[], const int n)
-{
-	for (int i = 0; i < n; i++) {
-		for (int j = i + 1; j < n; j++) {
-			if (arr[j] < arr[i]) {
-				double bufer = arr[i];
-				arr[i] = arr[j];
-				arr[j] = bufer;
-			}
-		}
-	}
-}
-void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
+template<typename T>
+void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
 	int iteration = 0;
 	int exchanges = 0;
@@ -269,7 +249,7 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 				for (int l = k >i ? 0:j + 1; l < COLS; l++) {
 					iteration++;
 					if (arr[k][l] < arr[i][j]) {
-						int buffer = arr[i][j];
+						T buffer = arr[i][j];
 						arr[i][j] = arr[k][l];
 						arr[k][l] = buffer;
 						exchanges++;
@@ -281,26 +261,20 @@ void Sort(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	cout << "Количество итераций" << " " << iteration<<endl;
 	cout << "Количество обменов" << " " <<exchanges<<endl;
 }
+template<typename T>
+int SumNumbers(T arr[], const int n)
+{
+	T sum = 0;
+	for (int i = 0; i < n; i++) {
+		sum += arr[i];
+	}
+	return sum;
+}
 
-int SumNumbers(int arr[], const int n)
+template<typename T>
+T SumNumbers(T arr[ROWS][COLS], const int ROWS, const int COLS)
 {
-	int sum = 0;
-	for (int i = 0; i < n; i++) {
-		sum += arr[i];
-	}
-	return sum;
-}
-double SumNumbers(double arr[], const int n)
-{
-	double sum = 0;
-	for (int i = 0; i < n; i++) {
-		sum += arr[i];
-	}
-	return sum;
-}
-int SumNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	int sum = 0;
+	T sum = 0;
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLS; j++) {
@@ -309,34 +283,16 @@ int SumNumbers(int arr[ROWS][COLS], const int ROWS, const int COLS)
 	}
 	return sum;
 }
-double SumNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS)
-{
-	double sum = 0;
-	for (int i = 0; i < ROWS; i++)
-	{
-		for (int j = 0; j < COLS; j++) {
-			sum += arr[i][j];
-		}
-	}
-	return sum;
-}
-
-double AvgNumbers(int arr[], const int n, int Sum)
+template<typename T>
+double AvgNumbers(T arr[], const int n, T Sum)
 {
 	return  (double)Sum/n;
 }
-double AvgNumbers(double arr[], const int n, int Sum)
-{
-	return  (double)Sum / n;
-}
-double AvgNumbers(int arr[ROWS][COLS],const int ROWS, const int COLS, int Sum)
-{ 
-	return  (double)Sum / (ROWS * COLS);
-}
-double AvgNumbers(double arr[ROWS][COLS], const int ROWS, const int COLS, double Sum)
-{
-	return  Sum / (ROWS * COLS);
-}
+//template<typename T>
+//double AvgNumbers(T arr[ROWS][COLS],const int ROWS, const int COLS, T Sum)
+//{ 
+//	return  (double)Sum / (ROWS * COLS);
+//}
 
 int MaxNumbers(int arr[], const int n)
 { 
