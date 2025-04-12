@@ -123,6 +123,14 @@ void main() {
 	double dRandomArr[SIZE_2]{};
 	UniqueRand(dRandomArr, SIZE_2);
 	Print(dRandomArr, SIZE_2);
-
-
+	cout << endl;
+	cout << delimetr;
+	int iRandomArr_2[ROWS][COLS];
+	UniqueRand(iRandomArr_2, ROWS, COLS);
+	Print(iRandomArr_2, ROWS, COLS);
+	cout << endl;
+	cout << delimetr;
+	double dRandomArr_2[ROWS][COLS];
+	UniqueRand(dRandomArr_2, ROWS, COLS);
+	Print(dRandomArr_2, ROWS, COLS);
 }
