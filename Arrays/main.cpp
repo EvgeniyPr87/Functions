@@ -136,12 +136,12 @@ void main() {
 	Print(i_arr_2, ROWS, COLS);
 
 	cout << delimetr;
-	int d=0;
+	int d = 5;
 	
 	ShiftLeft(i_arr_2, ROWS, COLS,d);
 	cout << "Смещение элементов влево построчно:" << endl;
-	cout << d << endl;
-	cin >> d;
+	//cout << d << endl;
+	//cin >> d;
 	Print(i_arr_2, ROWS, COLS);
 
 
