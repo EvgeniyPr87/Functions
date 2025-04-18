@@ -1,7 +1,10 @@
-﻿#include"stdafx.h"
-#include"Constant.h"
+﻿#include "stdafx.h"
+#include "Constant.h"
 #include "FillRand.h"
 #include "Print.h"
+#include "tSort.h"
+#include "tStatistic.h"
+#include "tShifts.h"
 
 void main() {
 
