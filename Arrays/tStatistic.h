@@ -1,7 +1,7 @@
-#pragma once
+п»ї#pragma once
 #include"Constant.h"
 
-//функция вычисления суммы элементов массива
+//С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°
 template<typename T>
 T SumNumbers(T arr[], const int n)
 {
@@ -26,7 +26,7 @@ T SumNumbers(T arr[ROWS][COLS], const int ROWS, const int COLS)
 }
 
 
-// функция вычисления средн.арифметич. элементов
+// С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃСЂРµРґРЅ.Р°СЂРёС„РјРµС‚РёС‡. СЌР»РµРјРµРЅС‚РѕРІ
 template<typename T>
 double AvgNumbers(T arr[], const int n, int Sum)
 {
@@ -40,7 +40,7 @@ double AvgNumbers(T arr[ROWS][COLS], const int ROWS, const int COLS, int Sum)
 }
 
 
-// функция нахождения max из элементов
+// С„СѓРЅРєС†РёСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ max РёР· СЌР»РµРјРµРЅС‚РѕРІ
 template<typename T>
 T MaxNumbers(T arr[], const int n)
 {
@@ -67,7 +67,7 @@ T MaxNumbers(T arr[ROWS][COLS], const int ROWS, const int COLS)
 	return max_number;
 }
 
-// функция нахождения min из элементов
+// С„СѓРЅРєС†РёСЏ РЅР°С…РѕР¶РґРµРЅРёСЏ min РёР· СЌР»РµРјРµРЅС‚РѕРІ
 template<typename T>
 T MinNumbers(T arr[], const int n)
 {

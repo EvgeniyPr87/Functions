@@ -1,6 +1,6 @@
-#pragma once
+п»ї#pragma once
 #include"Constant.h"
-//функция сортировки массива
+//С„СѓРЅРєС†РёСЏ СЃРѕСЂС‚РёСЂРѕРІРєРё РјР°СЃСЃРёРІР°
 template<typename T>
 void Sort(T arr[], const int n)
 {
@@ -36,6 +36,6 @@ void Sort(T arr[ROWS][COLS], const int ROWS, const int COLS)
 			}
 		}
 	}
-	cout << "Количество итераций" << " " << iteration << endl;
-	cout << "Количество обменов" << " " << exchanges << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РёС‚РµСЂР°С†РёР№" << " " << iteration << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РѕР±РјРµРЅРѕРІ" << " " << exchanges << endl;
 }

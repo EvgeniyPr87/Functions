@@ -1,7 +1,7 @@
-#pragma once
+п»ї#pragma once
 #include"Constant.h"
 
-//функция смещения массива влево
+//С„СѓРЅРєС†РёСЏ СЃРјРµС‰РµРЅРёСЏ РјР°СЃСЃРёРІР° РІР»РµРІРѕ
 template<typename T>
 void ShiftLeft(T arr[], const int n, int shift)
 {
@@ -20,7 +20,7 @@ void ShiftLeft(T arr[ROWS][COLS], const int ROWS, const int COLS, int shift)
 	ShiftLeft(arr[0], ROWS * COLS, shift);
 }
 
-//функция смещения массива вправо
+//С„СѓРЅРєС†РёСЏ СЃРјРµС‰РµРЅРёСЏ РјР°СЃСЃРёРІР° РІРїСЂР°РІРѕ
 template<typename T>
 void ShiftRight(T arr[], const int n, int shift)
 {

@@ -1,4 +1,4 @@
-#include"FillRand.h"
+﻿#include"FillRand.h"
 #include "stdafx.h"
 #include"Constant.h"
 void FillRand(int arr[], const int n)

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include"Constant.h"
 
 void FillRand(int arr[], const int n);
