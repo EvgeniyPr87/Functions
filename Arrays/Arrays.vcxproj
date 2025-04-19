@@ -129,6 +129,10 @@
   <ItemGroup>
     <ClCompile Include="FillRand.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Print.cpp" />
+    <ClCompile Include="tShifts.cpp" />
+    <ClCompile Include="tSort.cpp" />
+    <ClCompile Include="tStatistic.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Constant.h" />
