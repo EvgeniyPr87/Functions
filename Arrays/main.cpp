@@ -2,13 +2,13 @@
 #include "Constant.h"
 #include "FillRand.h"
 #include "Print.h"
-#include"Print.cpp"
+#include "Print.cpp"
 #include "tSort.h"
-#include"tSort.cpp"
+#include "tSort.cpp"
 #include "tStatistic.h"
-#include"tStatistic.cpp"
+#include "tStatistic.cpp"
 #include "tShifts.h"
-#include"tShifts.cpp"
+#include "tShifts.cpp"
 
 void main() {
 
