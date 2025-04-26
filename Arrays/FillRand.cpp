@@ -1,6 +1,6 @@
 ﻿#include"FillRand.h"
 #include "stdafx.h"
-#include"Constant.h"
+#include"constant.h"
 void FillRand(int arr[], const int n)
 {
 	for (int i = 0; i < n; i++) {

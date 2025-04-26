@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include"Constant.h"
+#include"constant.h"
 //функция сортировки массива
 
 template<typename T> void Sort(T arr[], const int n);

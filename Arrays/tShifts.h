@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include"Constant.h"
+#include"constant.h"
 
 //функция смещения массива влево
 template<typename T> void ShiftLeft(T arr[], const int n, int shift);

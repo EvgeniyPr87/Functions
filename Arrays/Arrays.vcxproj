@@ -135,7 +135,7 @@
     <ClCompile Include="tStatistic.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Constant.h" />
+    <ClInclude Include="constant.h" />
     <ClInclude Include="FillRand.h" />
     <ClInclude Include="Print.h" />
     <ClInclude Include="stdafx.h" />

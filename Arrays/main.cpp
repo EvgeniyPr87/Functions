@@ -1,5 +1,5 @@
 ﻿#include "stdafx.h"
-#include "Constant.h"
+#include "constant.h"
 #include "FillRand.h"
 #include "Print.h"
 #include "Print.cpp"

@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include"Constant.h"
+#include"constant.h"
 
 //функция вычисления суммы элементов массива
 template<typename T> T SumNumbers(T arr[], const int n);
